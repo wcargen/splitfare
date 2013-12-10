@@ -362,3 +362,34 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-10 12:57:56 -0800
+Processing by RidesController#index as HTML
+  Rendered rides/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 80ms (Views: 79.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-10 12:57:56 -0800
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2013-12-10 12:57:56 -0800
+Served asset /rides.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-10 12:57:56 -0800
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-10 12:57:56 -0800
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2013-12-10 12:57:56 -0800
+Served asset /rides.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 12:57:56 -0800
+Served asset /application.js - 200 OK (35ms)
