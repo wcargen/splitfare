@@ -11,6 +11,7 @@ gem 'devise'
 gem 'ejs'
 gem 'twilio-ruby'
 gem 'rails_12factor'
+gem 'geocoder'
 
 group :development, :test do
   gem 'rspec-rails'

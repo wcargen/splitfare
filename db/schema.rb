@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131210220813) do
+ActiveRecord::Schema.define(:version => 20131211054424) do
 
   create_table "location_rides", :force => true do |t|
     t.integer  "location_id"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(:version => 20131210220813) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
-    t.float    "lat"
-    t.float    "long"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -41,16 +41,17 @@ ActiveRecord::Schema.define(:version => 20131210220813) do
   end
 
   create_table "rides", :force => true do |t|
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "user_id"
     t.integer  "location_id"
     t.string   "destination"
-    t.integer  "destination_lat"
-    t.integer  "destination_long"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "airline"
     t.datetime "arrival_time"
     t.text     "details"
+    t.string   "address"
   end
 
   create_table "users", :force => true do |t|
