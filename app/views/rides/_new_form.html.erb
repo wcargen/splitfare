@@ -1,0 +1,7 @@
+<%= form_for @ride do |f| %>
+  <%= f.text_field :address, placeholder: "Where are you?" %><br>
+  <%= f.text_field :destination, placeholder: "Where are you going?" %><br>
+  <%= f.label "When do you want to leave?" %><br>
+  <%= f.datetime_select :time, :ampm => true, :minute_step => 5 %><br>
+  <%= f.submit %>
+<% end %>

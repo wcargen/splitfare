@@ -1,10 +1,6 @@
 <div class="jumbotron">
   <div class="container">
     <h1>List a new ride!</h1>
-    <%= form_for @ride do |f| %>
-      <%= f.text_field :address, placeholder: "Where are you?" %><br>
-      <%= f.text_field :destination, placeholder: "Where are you going?" %><br>
-      <%= f.submit %>
-    <% end %>
+    <%= render partial: "new_form" %>
   </div>
 </div>

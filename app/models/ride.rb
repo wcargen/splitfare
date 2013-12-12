@@ -3,8 +3,8 @@ class Ride < ActiveRecord::Base
                   :airline, :arrival_time, :address
 
   belongs_to :user
-  # has_many :users, :through => :ride_users
-  # has_many :locations, :through => :location_rides
+  has_many :users, :through => :ride_users
+  has_many :locations, :through => :location_rides
 
 
   geocoded_by :address
