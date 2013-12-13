@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Nearby Rides</h1>
+    <% @current_rides.each do |ride| %>
+      <li><%= ride.address %> to <%= ride.destination %></li>
+    <% end %>
+  </div>
+</div>

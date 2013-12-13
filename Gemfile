@@ -12,6 +12,8 @@ gem 'ejs'
 gem 'twilio-ruby'
 gem 'rails_12factor'
 gem 'geocoder'
+gem 'chronic'
+gem 'chronic_duration'
 
 group :development, :test do
   gem 'rspec-rails'

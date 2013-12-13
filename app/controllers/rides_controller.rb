@@ -1,7 +1,7 @@
 class RidesController < ApplicationController
   def index
     @rides = Ride.all
-    # @current_rides = Ride.where("user_id != ?", current_user.id)
+    @current_rides = Ride.where("user_id != ?", current_user.id)
     # binding.pry
   end
 
@@ -10,13 +10,15 @@ class RidesController < ApplicationController
   end
 
   def create
-      current_user.rides.create(address: params[:ride][:address],
-        destination: params[:ride][:destination])
+      current_user.rides.create(
+        address: params[:ride][:address],
+        destination: params[:ride][:destination],
+        details: params[:ride][:details])
       redirect_to rides_path
   end
 
   def show
-    @current_rides = Ride.where("user_id != ?", current_user.id)
+
   end
 
   def edit
