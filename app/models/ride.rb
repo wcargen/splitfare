@@ -1,6 +1,6 @@
 class Ride < ActiveRecord::Base
   attr_accessible :user_id, :location_id, :destination, :latitude, :longitude,
-                  :airline, :time, :address, :details, :d_latitude, :d_longitude
+                  :airline, :ride_time, :address, :details, :d_latitude, :d_longitude
 
   belongs_to :user
   has_many :users, :through => :ride_users

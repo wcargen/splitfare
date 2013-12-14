@@ -3,6 +3,7 @@
   <%= f.text_field :destination, placeholder: "Where are you going?" %><br>
   <%= f.text_field :details, placeholder: "Ride details" %><br>
   <%= f.label "When do you want to leave?" %><br>
-  <%= f.datetime_select :time, :ampm => true, :minute_step => 5 %><br>
+  <%= f.datetime_select :ride_time, :minute_step => 5, :ampm => true, :ignore_date => true,
+                        :default => { :hour => 12, :minute => 00 } %><br>
   <%= f.submit %>
 <% end %>

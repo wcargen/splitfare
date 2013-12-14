@@ -10,11 +10,15 @@ class RidesController < ApplicationController
   end
 
   def create
-      current_user.rides.create(
-        address: params[:ride][:address],
-        destination: params[:ride][:destination],
-        details: params[:ride][:details])
-      redirect_to rides_path
+    ride = params[:ride]
+    date = DateTime.new ride["ride_time(1i)"].to_i, ride["ride_time(2i)"].to_i, ride["ride_time(3i)"].to_i,
+                    ride["ride_time(4i)"].to_i, ride["ride_time(5i)"].to_i
+    current_user.rides.create(
+      address: params[:ride][:address],
+      destination: params[:ride][:destination],
+      details: params[:ride][:details],
+      ride_time: date)
+    redirect_to rides_path
   end
 
   def show
