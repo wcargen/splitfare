@@ -2,7 +2,9 @@ Splitfare::Application.routes.draw do
 
   devise_for :users, :rides
 
-  root :to => 'rides#index'
+  devise_scope :user do
+    root :to => 'welcome#index'
+  end
 
   resources :users, :rides, :locations
 

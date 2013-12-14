@@ -5,5 +5,5 @@
   <%= f.label "When do you want to leave?" %><br>
   <%= f.datetime_select :ride_time, :minute_step => 5, :ampm => true, :ignore_date => true,
                         :default => { :hour => 12, :minute => 00 } %><br>
-  <%= f.submit %>
+  <%= f.submit :class => "btn btn-primary" %>
 <% end %>
