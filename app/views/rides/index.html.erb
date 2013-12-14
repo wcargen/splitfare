@@ -2,7 +2,8 @@
   <div class="container">
     <h1>Nearby Rides</h1>
     <% @current_rides.each do |ride| %>
-      <li><%= ride.address %> to <%= ride.destination %></li>
+      <li><%= ride.address %> to <%= ride.destination %>
+      <%= ride.ride_time.strftime("on %B %d at %I:%M %p") %></li>
     <% end %>
   </div>
 </div>

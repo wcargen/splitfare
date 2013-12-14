@@ -6,9 +6,7 @@ class Ride < ActiveRecord::Base
   has_many :users, :through => :ride_users
   has_many :locations, :through => :location_rides
 
-
   geocoded_by :address
-  # geocoded_by :destination, :latitude  => :d_latitude, :longitude => :d_longitude
 
   after_validation :geocode
 
