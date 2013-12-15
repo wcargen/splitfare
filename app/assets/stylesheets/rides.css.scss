@@ -1,3 +1,48 @@
 // Place all the styles related to the rides controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#logged_in {
+  color: white;
+  margin-left: -5px;
+}
+
+#sign_up {
+  color: white;
+  margin-top: 5px;
+}
+
+html, body, #map-canvas {
+  height: 100%;
+}
+
+#sidebar_wrapper {
+  margin-top: -15px;
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #27ae60;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+  padding: 5px;
+}
+
+#new_ride_form {
+  margin-top: 100px;
+}
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { float: left; clear:left; padding: 0 0 0 5px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 45%; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; padding: 0 5px 0 0; }
+.ui-timepicker-rtl dl dt{ float: right; clear: right; }
+.ui-timepicker-rtl dl dd { margin: 0 45% 10px 10px; }

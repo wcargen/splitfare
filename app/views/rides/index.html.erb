@@ -1,11 +1,17 @@
 <div class="jumbotron">
+  <div id="sidebar_wrapper">
+  </div>
   <div class="container">
-    <h1>Nearby Rides</h1>
+    <h1>Nearby rides</h1>
     <% @current_rides.each do |ride| %>
-      <li><%= ride.address %> to <%= ride.destination %>
+      <li> <%= ride.address %> to <%= ride.destination %>
+      <%= ride.ride_time.strftime("on %B %d at %I:%M %p") %> </li>
+    <% end %>
+
+    <h1>Your upcoming rides:</h1>
+    <% @user_rides.each do |ride| %>
+      <li> <%= ride.address %> to <%= ride.destination %>
       <%= ride.ride_time.strftime("on %B %d at %I:%M %p") %> </li>
     <% end %>
   </div>
 </div>
-
-<div id="map-canvas"></div>

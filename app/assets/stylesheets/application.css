@@ -9,37 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.all
  *= require_tree .
  */
 
-#logged_in {
-  color: white;
-  margin-left: -5px;
-}
-
-#sign_up {
-  color: white;
-  margin-top: 5px;
-}
-
-html, body, #map-canvas {
-  height: 100%;
-}
-
-#sidebar_wrapper {
-  margin-top: -15px;
-  margin-left: -250px;
-  left: 250px;
-  width: 250px;
-  background: #27ae60;
-  position: fixed;
-  height: 100%;
-  overflow-y: auto;
-  z-index: 1000;
-  transition: all 0.4s ease 0s;
-  padding: 5px;
-}
-
-#new_ride_form {
-  margin-top: 100px;
-}

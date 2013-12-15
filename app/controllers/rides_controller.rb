@@ -2,6 +2,7 @@ class RidesController < ApplicationController
   def index
     @rides = Ride.all
     @current_rides = Ride.where("user_id != ?", current_user.id)
+    @user_rides = Ride.where("user_id = ?", current_user.id)
     # binding.pry
   end
 
