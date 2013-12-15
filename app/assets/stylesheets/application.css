@@ -24,7 +24,22 @@
 
 html, body, #map-canvas {
   height: 100%;
-  margin: 50px;
-  padding: 0px
 }
 
+#sidebar_wrapper {
+  margin-top: -15px;
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #27ae60;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+  padding: 5px;
+}
+
+#new_ride_form {
+  margin-top: 100px;
+}
