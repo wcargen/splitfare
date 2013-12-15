@@ -12,6 +12,7 @@ gem 'ejs'
 gem 'twilio-ruby'
 gem 'rails_12factor'
 gem 'geocoder'
+gem 'figaro'
 
 group :development, :test do
   gem 'rspec-rails'

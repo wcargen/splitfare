@@ -21,3 +21,10 @@
   color: white;
   margin-top: 5px;
 }
+
+html, body, #map-canvas {
+  height: 100%;
+  margin: 50px;
+  padding: 0px
+}
+
