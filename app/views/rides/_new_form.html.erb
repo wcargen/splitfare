@@ -3,7 +3,7 @@
   <%= f.text_field :destination, placeholder: "Where are you going?", :class => "form-control" %><br>
   <%= f.text_field :details, placeholder: "Ride details", :class => "form-control" %><br>
   <%= f.label "When do you want to leave?" %><br>
-  <%= f.text_field :ride_time, :minute_step => 5, :ampm => true, :ignore_date => true,
-                        :default => { :hour => 12, :minute => 00 } %><br><br>
+  <%= f.text_field :ride_time %><br><br>
   <%= f.submit :class => "btn btn-primary" %>
 <% end %>
+

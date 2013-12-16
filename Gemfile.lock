@@ -62,6 +62,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (4.1.0)
       railties (>= 3.1.0)
+    jquery_datepicker (0.4)
     json (1.8.1)
     jwt (0.1.8)
       multi_json (>= 1.5)
@@ -163,6 +164,7 @@ DEPENDENCIES
   geocoder
   jquery-rails
   jquery-ui-rails
+  jquery_datepicker
   pg
   pry
   pry-rails

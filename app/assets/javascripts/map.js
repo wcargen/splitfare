@@ -17,10 +17,13 @@ $(function(){
         var pos = new google.maps.LatLng(position.coords.latitude,
                                          position.coords.longitude);
 
+
+        var image = '/assets/CurrentLocation.png';
         var user_marker = new google.maps.Marker({
+          url: '/assets/CurrentLocation.png',
           position: pos,
           map: map,
-          title: 'Your location!'
+          icon: image
         });
 
         map.setCenter(pos);
@@ -54,7 +57,7 @@ $(function(){
 
     var options = {
       map: map,
-      position: new google.maps.LatLng(60, 105),
+      position: new google.maps.LatLng(37.7749300, -122.4194200),
       content: content
     };
 

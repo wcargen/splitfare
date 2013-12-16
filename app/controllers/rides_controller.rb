@@ -12,13 +12,14 @@ class RidesController < ApplicationController
 
   def create
     ride = params[:ride]
-    date = DateTime.new ride["ride_time(1i)"].to_i, ride["ride_time(2i)"].to_i, ride["ride_time(3i)"].to_i,
-                    ride["ride_time(4i)"].to_i, ride["ride_time(5i)"].to_i
+    date = params[:ride][:ride_time]
+    selected_date = DateTime.strptime("#{date}","%m/%d/%Y %H:%M %p").to_datetime.strftime("%Y-%m-%d %H:%M")
     current_user.rides.create(
       address: params[:ride][:address],
       destination: params[:ride][:destination],
       details: params[:ride][:details],
-      ride_time: date)
+      ride_time: selected_date)
+    binding.pry
     redirect_to rides_path
   end
 
