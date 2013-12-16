@@ -4,7 +4,9 @@ $(function(){
 
   function initialize() {
     var mapOptions = {
-      zoom: 17
+      zoom: 15,
+      zoomControl: true,
+      zoomControlOptions: {position: google.maps.ControlPosition.RIGHT_BOTTOM}
     };
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
