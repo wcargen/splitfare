@@ -55,6 +55,7 @@ $(function(){
       var content = 'Error: Your browser doesn\'t support geolocation.';
     }
 
+    // Sets default location to San Francisco if User does not support Geolocation
     var options = {
       map: map,
       position: new google.maps.LatLng(37.7749300, -122.4194200),

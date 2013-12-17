@@ -3,7 +3,11 @@ class RidesController < ApplicationController
     @rides = Ride.all
     @current_rides = Ride.where("user_id != ?", current_user.id)
     @user_rides = Ride.where("user_id = ?", current_user.id)
-    # binding.pry
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @rides}
+    end
   end
 
   def new
@@ -19,7 +23,6 @@ class RidesController < ApplicationController
       destination: params[:ride][:destination],
       details: params[:ride][:details],
       ride_time: selected_date)
-    binding.pry
     redirect_to rides_path
   end
 
