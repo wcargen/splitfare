@@ -66,33 +66,35 @@ $(function(){
     map.setCenter(options.position);
   }
 
+
+  // ajax request to display locations in the database
+
   $.ajax({
     type: 'GET',
     url: '/rides',
-    dataType: 'json',
-    success: function(data){
+    dataType: 'json'
+    }).done(function(data){
 
-      console.log(data);
+      // console.log(data);
 
-    var object = data
+      var object = data
       for (var i = 0; i < object.length; i++) {
         var addressLatLng = new google.maps.LatLng(object[i]["latitude"], object[i]["longitude"]);
         var destinationLatLng = new google.maps.LatLng(object[i]["d_latitude"], object[i]["d_longitude"]);
 
-        var image = '/assets/CurrentLocation.png';
         var addressMarker = new google.maps.Marker({
               position: addressLatLng,
-              animation: google.maps.Animation.DROP,
-              icon: image
+              map: map,
+              animation: google.maps.Animation.DROP
             });
         console.log(addressMarker);
 
-        ///// Markers currently not displaying on Map?
+
       }
 
-    }
+    });
 
-  });
+
 
   google.maps.event.addDomListener(window, 'load', initialize);
 });

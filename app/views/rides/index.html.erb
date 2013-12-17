@@ -4,10 +4,10 @@
       <h2>Your rides:</h2>
       <% @user_rides.each do |ride| %>
         <p>
-        <h4> <%= ride.ride_time.strftime("%B %d at %I:%M %p") %> </h4>
+        <h4> <%= ride.ride_time.strftime("%B %d at %I:%M %p") %> > </h4>
         From: <%= ride.address %> <br>
         To: <%= ride.destination %>
-        </p>>
+        </p>
       <% end %>
     </div>
 
