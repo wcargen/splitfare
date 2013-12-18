@@ -5,6 +5,7 @@
 h2{
   text-decoration: underline;
 }
+
 #logged_in {
   color: white;
   margin-left: -5px;
@@ -17,10 +18,6 @@ h2{
 
 html, body, #map-canvas {
   height: 100%;
-}
-
-#map_container{
-  position: fixed;
 }
 
 #sidebar_wrapper {

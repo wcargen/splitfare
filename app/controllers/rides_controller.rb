@@ -1,7 +1,6 @@
 class RidesController < ApplicationController
   def index
     @ride = Ride.new
-    @rides = Ride.order("ride_time").all
     @current_rides = Ride.where("user_id != ?", current_user.id).find(:all,
       :order => "ride_time",
       :conditions => ['ride_time >= ?', Date.today])

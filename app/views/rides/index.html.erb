@@ -11,8 +11,9 @@
       <% @user_rides.each do |ride| %>
         <p>
         <h4> <%= ride.ride_time.strftime("%B %d at %I:%M %p") %> </h4>
-        From: <%= ride.address %> <br>
-        To: <%= ride.destination %>
+        <strong>From:</strong> <%= ride.address %> <br>
+        <strong>To:</strong> <%= ride.destination %><br>
+        <strong>Details:</strong> <%= ride.details %>
         </p>
       <% end %>
     </div>
@@ -29,6 +30,5 @@
     </div>
   </div>
 </div>
-
 
 <div id="map-canvas"></div>

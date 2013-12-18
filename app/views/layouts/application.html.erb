@@ -25,6 +25,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
           <li><a href="/rides">Rides</a></li>
           <li><a href="#">About</a></li>
           <li class="dropdown">
@@ -39,6 +40,7 @@
               <li><a href="#">One more separated link</a></li>
             </ul>
           </li>
+          <% end %>
         </ul>
         <form class="navbar-form navbar-right">
           <% if user_signed_in? %>

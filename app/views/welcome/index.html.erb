@@ -1,9 +1,13 @@
 <body id="welcome_background">
   <div class="jumbotron">
     <div class="container">
-      <h1>Welcome to splitfare!</h1>
-      <h3>Log in or <%= link_to('sign up', new_user_registration_path) %>
-        to start sharing rides!
+      <% if user_signed_in? %>
+        <h1>Welcome back to splitfare, <%= current_user.first_name %>!</h1>
+      <% else %>
+        <h1>Welcome to splitfare!</h1>
+        <h3><%= link_to('Log in', user_session_path) %> or
+        <%= link_to('sign up', new_user_registration_path) %> to start sharing rides!</h3>
+      <% end %>
     </div>
   </div>
 </body>
