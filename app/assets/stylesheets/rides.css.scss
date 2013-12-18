@@ -19,6 +19,10 @@ html, body, #map-canvas {
   height: 100%;
 }
 
+#map_container{
+  position: fixed;
+}
+
 #sidebar_wrapper {
   margin-top: -15px;
   margin-left: -250px;
@@ -37,6 +41,7 @@ html, body, #map-canvas {
   margin-top: 100px;
   margin-left: 5px;
   margin-right: 5px;
+  margin-bottom: 100px;
 }
 
 .rides_container{
