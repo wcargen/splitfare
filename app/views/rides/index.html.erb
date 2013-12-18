@@ -1,6 +1,5 @@
 <div id="sidebar_wrapper">
   <div class="sidebar_content">
-    <button class="btn btn-primary">List a new ride!</button>
     <div id="new_ride_form">
       <h3>List a new ride:</h3>
       <%= render partial: "new_form" %>
@@ -8,6 +7,7 @@
 
     <div id="user_rides">
       <h2>Your rides:</h2>
+        <button class="btn btn-warning">List a new ride!</button>
       <% @user_rides.each do |ride| %>
         <p>
         <h4> <%= ride.ride_time.strftime("%B %d at %I:%M %p") %> </h4>

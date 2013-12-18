@@ -1,9 +1,9 @@
 $(function($){
   $('#new_ride_form').hide();
 
-  $('.btn-primary').on('click', function(){
+  $('.btn-warning').on('click', function(){
     $('#new_ride_form').show();
-    $('.btn-primary').hide();
+    $('.btn-warning').hide();
   });
 
   $('#ride_ride_time').datetimepicker({
