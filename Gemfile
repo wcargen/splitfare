@@ -13,6 +13,7 @@ gem 'twilio-ruby'
 gem 'rails_12factor'
 gem 'geocoder'
 gem 'figaro'
+gem 'datejs-rails'
 
 group :development, :test do
   gem 'rspec-rails'

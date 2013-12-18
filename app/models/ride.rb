@@ -12,8 +12,8 @@ class Ride < ActiveRecord::Base
 
   before_create do |ride|
     data = Geocoder.coordinates(ride.destination)
-    ride.d_longitude = data[0]
-    ride.d_latitude = data[1]
+    ride.d_latitude = data[0]
+    ride.d_longitude = data[1]
   end
 
 end

@@ -40,6 +40,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    datejs-rails (2.0.1)
+      railties (>= 3.1)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -158,6 +160,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  datejs-rails
   devise
   ejs
   figaro

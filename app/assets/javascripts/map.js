@@ -18,12 +18,11 @@ $(function(){
                                          position.coords.longitude);
 
 
-        var image = '/assets/CurrentLocation.png';
+        var locationImage = '/assets/CurrentLocation.png';
         var user_marker = new google.maps.Marker({
-          url: '/assets/CurrentLocation.png',
           position: pos,
           map: map,
-          icon: image
+          icon: locationImage
         });
 
         map.setCenter(pos);
@@ -46,7 +45,7 @@ $(function(){
     var autocomplete_address = new google.maps.places.Autocomplete(ride_address, options);
 
     var autocomplete_destination = new google.maps.places.Autocomplete(ride_destination, options);
-  }
+
 
   function handleNoGeolocation(errorFlag) {
     if (errorFlag) {
@@ -75,26 +74,55 @@ $(function(){
     dataType: 'json'
     }).done(function(data){
 
-      // console.log(data);
-
+      var infoWindow = new google.maps.InfoWindow();
+      var something = 0
       var object = data
       for (var i = 0; i < object.length; i++) {
         var addressLatLng = new google.maps.LatLng(object[i]["latitude"], object[i]["longitude"]);
-        var destinationLatLng = new google.maps.LatLng(object[i]["d_latitude"], object[i]["d_longitude"]);
 
+        // Data for infowindows
+        var destinationLatLng = new google.maps.LatLng(object[i]["d_latitude"], object[i]["d_longitude"]);
+        var addressContent = "<strong>" + object[i]["ride_time"] + "<br><br>" + object[i]["address"] +
+                            "</strong><br><br>" + "to <br><br>" + "<strong>" +
+                            object[i]["destination"] + "</strong>"
+
+        var destinationContent = "<strong>" + object[i]["destination"] + "</strong><br><br>" +
+                                "leaving at <strong>" + object[i]["ride_time"] + "</strong> from <br><br>"
+                                 + "<strong>" + object[i]["address"] + "</strong>"
+
+        var addressImage = '/assets/greenmarker.png';
         var addressMarker = new google.maps.Marker({
               position: addressLatLng,
               map: map,
+              icon: addressImage,
               animation: google.maps.Animation.DROP
             });
-        console.log(addressMarker);
 
+        addressMarker.content = addressContent;
+
+        var destinationMarker = new google.maps.Marker({
+              position: destinationLatLng,
+              map: map,
+              animation: google.maps.Animation.DROP
+            });
+
+        destinationMarker.content = destinationContent;
+
+        google.maps.event.addListener(addressMarker, 'click', function(){
+          infoWindow.setContent(this.content);
+          infoWindow.open(this.getMap(), this);
+        });
+
+        google.maps.event.addListener(destinationMarker, 'click', function(){
+          infoWindow.setContent(this.content);
+          infoWindow.open(this.getMap(), this);
+        });
 
       }
 
     });
-
-
+  }
 
   google.maps.event.addDomListener(window, 'load', initialize);
 });
+

@@ -1,8 +1,8 @@
 class RidesController < ApplicationController
   def index
-    @rides = Ride.all
-    @current_rides = Ride.where("user_id != ?", current_user.id)
-    @user_rides = Ride.where("user_id = ?", current_user.id)
+    @rides = Ride.order("ride_time").all
+    @current_rides = Ride.where("user_id != ?", current_user.id).order("ride_time")
+    @user_rides = Ride.where("user_id = ?", current_user.id).order("ride_time")
 
     respond_to do |format|
       format.html
