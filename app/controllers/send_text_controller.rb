@@ -10,15 +10,16 @@ class SendTextController < ApplicationController
     twilio_sid = ENV["twilio_sid"]
     twilio_token = ENV["twilio_token"]
     twilio_phone_number = ENV["twilio_phone_number"]
+    address = params[:address]
+    ride_time = params[:ride_time]
 
     @twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
 
     @twilio_client.account.sms.messages.create(
       :from => "+1#{twilio_phone_number}",
       :to => phone_number,
-      :body => "#{first_name} wants to join your ride. Text/call him at #{request_phone_number}
-        to plan your ride."
+      :body => "#{first_name} wants to join your ride to on #{ride_time}. Text/call him at #{request_phone_number} to plan your ride."
     )
-    redirect_to rides_path
+    redirect_to root_path
   end
 end
