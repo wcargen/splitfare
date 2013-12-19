@@ -6,6 +6,6 @@ Splitfare::Application.routes.draw do
     root :to => 'welcome#index'
   end
 
-  resources :users, :rides, :locations
+  resources :users, :rides, :locations, :send_text
 
 end

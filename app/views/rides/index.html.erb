@@ -25,6 +25,12 @@
         <h4> <%= ride.ride_time.strftime("%B %d at %I:%M %p") %> </h4> <br>
         From: <%= ride.address %> <br>
         To: <%= ride.destination %>
+        <form action="/send_text" method="post">
+          <input type="hidden" name="phone_number" value="<%= ride.user.phone_number %>">
+          <input type="hidden" name="first_name" value="<%= current_user.first_name %>">
+          <input type="hidden" name="request_phone_number" value="<%= current_user.phone_number %>">
+          <input type="submit" value="Request to join">
+        </form>
         </p>
       <% end %>
     </div>

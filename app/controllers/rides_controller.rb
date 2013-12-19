@@ -7,7 +7,6 @@ class RidesController < ApplicationController
     @user_rides = Ride.where("user_id = ?", current_user.id).find(:all,
       :order => "ride_time",
       :conditions => ['ride_time >= ?', Date.today])
-    # @phone = User.find(params[:user_id]).phone_number
 
     respond_to do |format|
       format.html
@@ -29,6 +28,10 @@ class RidesController < ApplicationController
       details: params[:ride][:details],
       ride_time: selected_date)
     redirect_to rides_path
+  end
+
+  def send_text_message
+
   end
 
   def show
