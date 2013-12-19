@@ -30,10 +30,6 @@ class RidesController < ApplicationController
     redirect_to rides_path
   end
 
-  def send_text_message
-
-  end
-
   def show
 
   end
