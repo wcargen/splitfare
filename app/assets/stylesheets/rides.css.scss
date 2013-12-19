@@ -20,12 +20,16 @@ html, body, #map-canvas {
   height: 100%;
 }
 
+#upcoming_rides{
+  margin-top: 50px;
+}
+
 #sidebar_wrapper {
   margin-top: -15px;
   margin-left: -250px;
   left: 250px;
   width: 400px;
-  background: #16a085;
+  background-color: rgba(156, 217, 107, 0.9);
   position: fixed;
   height: 100%;
   overflow-y: auto;
@@ -39,6 +43,7 @@ html, body, #map-canvas {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 100px;
+  color: #2c3e50;
 }
 
 .rides_container{
