@@ -3,10 +3,10 @@ class RidesController < ApplicationController
     @ride = Ride.new
     @current_rides = Ride.where("user_id != ?", current_user.id).find(:all,
       :order => "ride_time",
-      :conditions => ['ride_time >= ?', Date.today])
+      :conditions => ["ride_time >= ?", Date.today])
     @user_rides = Ride.where("user_id = ?", current_user.id).find(:all,
       :order => "ride_time",
-      :conditions => ['ride_time >= ?', Date.today])
+      :conditions => ["ride_time >= ?", Date.today])
 
     respond_to do |format|
       format.html
