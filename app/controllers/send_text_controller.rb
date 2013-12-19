@@ -20,6 +20,7 @@ class SendTextController < ApplicationController
       :to => phone_number,
       :body => "#{first_name} wants to join your ride to on #{ride_time}. Text/call him at #{request_phone_number} to plan your ride."
     )
-    redirect_to root_path
+
+    redirect_to rides_path
   end
 end

@@ -31,7 +31,8 @@
           <input type="hidden" name="request_phone_number" value="<%= current_user.phone_number %>">
           <input type="hidden" name="address" value="<%= ride.address %>">
           <input type="hidden" name="ride_time" value="<%= ride.ride_time.strftime('%B %d at %I:%M %p') %>">
-          <input type="submit" value="Request to join">
+          <input type="submit" value="Request to join" class="btn btn-default btn-xs">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token.to_s%>">
         </form>
         </p>
       <% end %>
