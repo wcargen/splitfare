@@ -9,8 +9,8 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-  <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="jumbotron.css" rel="stylesheet"> -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="jumbotron.css" rel="stylesheet">
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,8 +27,9 @@
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
           <li><a href="/rides">Rides</a></li>
-          <li><a href="#">About</a></li>
-          </li>
+          <li><a href="/about">About</a></li>
+          <% else %>
+          <li><a href="/about">About</a></li>
           <% end %>
         </ul>
         <form class="navbar-form navbar-right">

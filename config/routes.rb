@@ -8,4 +8,6 @@ Splitfare::Application.routes.draw do
 
   resources :users, :rides, :locations, :send_text
 
+  get '/about', to: 'welcome#about'
+
 end
