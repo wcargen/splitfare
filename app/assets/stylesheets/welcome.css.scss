@@ -4,6 +4,10 @@
 
 #welcome_background{
   background-image:url("/assets/welcomebackground.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .static_info {

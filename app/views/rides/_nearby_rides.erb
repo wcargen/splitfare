@@ -1,0 +1,18 @@
+<h2>Nearby rides:</h2><br>
+  <% @current_rides.each do |ride| %>
+    <p>
+      <h4> <%= ride.ride_time.strftime("%B %d at %I:%M %p") %> </h4> <br>
+        <strong>From:</strong> <%= ride.address %> <br>
+        <strong>To:</strong> <%= ride.destination %> <br>
+        <strong>Details:</strong> <%= ride.details %> <br>
+        <form action="/send_text" method="post">
+          <input type="hidden" name="phone_number" value="<%= ride.user.phone_number %>">
+          <input type="hidden" name="first_name" value="<%= current_user.first_name %>">
+          <input type="hidden" name="request_phone_number" value="<%= current_user.phone_number %>">
+          <input type="hidden" name="address" value="<%= ride.address %>">
+          <input type="hidden" name="ride_time" value="<%= ride.ride_time.strftime('%B %d at %I:%M %p') %>">
+          <input type="submit" value="Request to join" class="btn btn-info btn-xs">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token.to_s%>">
+        </form>
+    </p><br>
+  <% end %>
