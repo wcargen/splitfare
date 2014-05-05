@@ -43,7 +43,11 @@ class RidesController < ApplicationController
   end
 
   def destroy
-
+    @ride = Ride.find(params[:id])
+    if @ride.present?
+      @ride.destroy
+    end
+    redirect_to rides_path
   end
 
 end

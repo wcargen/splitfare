@@ -65,7 +65,6 @@ $(function(){
     map.setCenter(options.position);
   }
 
-
   // ajax request to display locations in the database
 
   $.ajax({
