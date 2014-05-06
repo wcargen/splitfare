@@ -5,7 +5,7 @@
   <h4> <%= ride.ride_time.strftime("%B %d at %I:%M %p") %> </h4><br>
   <strong>From:</strong> <%= ride.address %> <br>
   <strong>To:</strong> <%= ride.destination %><br>
-  <strong>Details:</strong> <%= ride.details %>
-  <%= link_to "delete", ride, method: :delete, confirm: "Are you sure?" %>
+  <strong>Details:</strong> <%= ride.details %><br>
+  <%= link_to "Cancel", ride, method: :delete, confirm: "Are you sure?" %>
   </p><br>
 <% end %>
